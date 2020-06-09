@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/mytaskinfo/mytaskinfo",
+    "pages/makesurehelper/makesurehelper",
+    "pages/address/address",
+    "pages/me/me", 
+    "pages/index/index",
+    "pages/posttask/posttask",
+    "pages/password/password",
+    "pages/task/task",
+    "pages/mytask/mytask",
+    "pages/evaluatetask/evaluatetask",
+    "pages/myinformation/myinformation",
+    "pages/logs/logs" 
+  ], 
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#FED803",
+    "navigationBarTitleText": "帮帮",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color":"#8A8A8A",
+    "selectedColor": "#ff2d4a",
+    "backgroundColor": "#FED803", 
+    "list": [{ 
+      "pagePath": "pages/index/index",
+      "text": "新单推荐",
+      "iconPath": "photos/tuijian.png",
+      "selectedIconPath": "photos/tuijian1.png"
+    },
+  {
+    "pagePath": "pages/mytask/mytask",
+    "text": "我的订单",
+    "iconPath": "photos/mytask.png",
+    "selectedIconPath": "photos/mytask1.png"
+  },
+{
+  "pagePath": "pages/me/me",
+  "text": "我的",
+  "iconPath": "photos/me.png",
+  "selectedIconPath": "photos/me1.png"
+}]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

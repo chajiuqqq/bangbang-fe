@@ -1,0 +1,35 @@
+<view class="top">
+<view class="box">
+        <image circle mode="widthFix" class="img" src="../../photos/me.png" ></image>
+        <view style="padding-left:50rpx;padding-top:60rpx;font-size:larger">{{name}}</view>
+        <view class="pricebutton"><text>{{text1}}</text><text>{{taskprice}}</text></view>
+</view>
+<view class="line"></view>
+<view class="box"> 
+	<image src="../../photos/phone.png" mode="widthFix" style="width:60rpx;padding-left:50rpx;margin-top:30rpx"></image>
+	<view style="margin-top:30rpx;margin-left:50rpx;margin-bottom:20rpx;font-size:40rpx"><text>{{text2}}</text><text>{{phonenum}}</text></view>
+</view>
+</view>
+<view class="tasknumber">
+       <text> {{text3}} </text>
+      <text> {{tasknum}}</text>
+</view>
+<view class="line"></view>
+<view class="task">
+	<text>{{text4}}</text>
+	<text>{{tasktime}}</text>
+</view>
+<view class="task">
+	<text style="letter-spacing:18rpx">{{text5}}</text>
+	<text>{{address}}</text>
+</view>
+<view class="task">
+	<text>{{text6}}</text>
+</view>
+<view class="conts">
+    <textarea class="areas" placeholder='用户没有留下要求~' maxlength="{{max}}" bindinput="inputs" value="{{request}}" disabled="true"> 
+        <text class="currentWordNumber">{{currentWordNumber}}/{{max}}</text>
+    </textarea>
+</view>
+<button class="bottombutton" style="width:94%">{{text8}}</button>
+

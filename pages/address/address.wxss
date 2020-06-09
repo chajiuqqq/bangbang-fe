@@ -1,0 +1,26 @@
+.order-item{
+	width:94%;
+    height:150rpx;
+    margin: 27rpx;
+    border-radius: 10rpx;
+    box-shadow:0px 2px 3px 3px lightgrey;
+}
+.content{
+	padding-top: 30rpx;
+	padding-left: 35rpx;
+	font-size: large;
+	display: inline-flex;
+}
+.alter{
+	color:grey;
+	display: inline-flex;
+	float:right;
+	margin-top: 30rpx;
+	margin-right: 35rpx;
+}
+.bottombutton{
+	background-color: #FED803;
+	color:#57502C;
+	margin-top: 220rpx; 
+	border-radius: 15rpx
+}

@@ -1,0 +1,138 @@
+/* pages/category/category.wxss */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: initial;
+  box-sizing: border-box;
+} 
+
+.furnitures {
+  width: 750rpx;
+  height: 1200rpx;
+  justify-content: initial;
+}
+
+.search {
+  padding: 20rpx;
+}
+
+.search-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50rpx;
+  color: #aaa;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 20rpx;
+}
+
+.search-text icon {
+  margin-right: 10rpx;
+}
+
+/*left*/
+
+.furnitures-left {
+  width: 25%;
+  padding-top: 20rpx;
+  height: 100%;
+  background-color: rgba(217, 217, 217, 0.3);
+}
+
+.furnitures-left view {
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  padding-left: 5rpx;
+}
+
+.furnitures-left text {
+  padding-left: 30rpx;
+}
+
+.active {
+  background-size: 5rpx 60rpx;
+}
+
+.active text {
+  display: block;
+  background-color: #fff;
+}
+.outer{
+  width:180px;
+  height:64px;
+  border:2px solid black;
+}
+
+.font{
+  font-weight:bold;
+  font-size: 10px;
+}
+.order{
+  box-shadow: 0 4px 8px 0 rgba(3, 3, 3, 0.685);
+  max-width: 300px;
+  margin: auto;
+  text-align: left;
+  font-family: arial;
+}
+/*right*/
+
+.goods-right {
+  float: right;
+  margin-top: -160%;
+}
+
+.furnitures-right {
+  width: 75%;
+  box-sizing: border-box;
+  padding: 20rpx 5% 0 5%;
+}
+
+.rcmd-furniture .navigator {
+  width: 100%;
+}
+
+.furList {
+  font-size: 30rpx;
+  line-height: 48rpx;
+  padding-top: 30rpx;
+}
+
+.furList text {
+  display: block;
+  color: #000;
+  text-align: left;
+}
+
+.furList .navigator {
+  color: #999;
+  display: block;
+  padding: 0 30rpx;
+  margin: 0px 0;
+}
+
+
+.swiper-tab {
+  height: 40px;
+  line-height: 40px;
+  background: #3B3B3B;
+  color:#fff ;
+  display: flex;
+  position: relative;
+  z-index: 2;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom:1px solid black;
+}
+ 
+.swiper-tab-list {
+  margin: 0 30px;
+  padding: 0 4px;
+  font-size: 15px;
+}

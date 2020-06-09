@@ -1,0 +1,72 @@
+.kuang{
+	width:90%;
+    height:1150rpx;
+    border-radius: 10rpx;
+    box-shadow:0px 2px 3px 3px lightgrey;
+    margin:10px auto;
+    padding: 5px 10px;
+
+}
+.areas{
+  height:250rpx;
+  width:92%;
+  font-size: 30rpx;
+  text-indent: 28rpx;
+  border: 1rpx solid #F6F6F6;
+  border-radius: 10rpx;
+  background-color: #F6F6F6;
+  padding-top: 30rpx;
+  margin: 30rpx auto;
+  overflow: hidden;   
+  position: relative; 
+}
+.currentWordNumber{
+  font-size: 28rpx;
+  color: gray;
+  position: absolute;
+  left: 480rpx;
+  bottom: 2rpx;
+}
+.topcontent{
+  font-size: 40rpx;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+}
+.leftcontent{
+  font-size: 40rpx;
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+  
+}
+input{
+	display: inline-block;
+	font-size:35rpx;
+}
+.bottombutton{
+	background-color: #D8D5D5;
+	color:#57502C;
+	border-radius: 15rpx;
+	display: inline-block;
+}
+.leftbutton{
+	background-color: #FED803;
+	color:#57502C;
+	border-radius: 15rpx;
+	display: inline-block;
+	float:left;
+	text-align: center;
+	margin-top: 20rpx;
+}
+.rightbutton{
+	background-color: #FED803;
+	color:#57502C;
+	border-radius: 15rpx;
+	display: inline-block;
+	float:right;
+	/*margin-right: 180rpx;*/
+	text-align: center;
+	/*margin-top: 30rpx;*/
+	margin-top: 20rpx;
+}

@@ -1,0 +1,77 @@
+/* pages/page4/page4.wxss */
+page{
+  background: #eee;
+}
+.baseInfo{
+  padding:20rpx 10rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.baseInfo image{
+  width: 10rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.baseInfo text{
+  font-size: 28rpx;
+  color: #6f6f6f;
+}
+.list{
+  color: #6f6f6f;
+  font-size: 32rpx;
+}
+.icon{
+  background: #fff;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+ 
+.icon-img{
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.icon-head{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.icon-r{
+  width: 20rpx;
+  height: 30rpx;
+}
+.name,.sex,.phone,.info,.ads,.school,.studentid,.college{
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid rgb(16, 224, 26);
+}
+.name input,.phone input,.info input,.ads input,.school input,.studentid input,.college input {
+  text-align:right;
+}
+.sex{
+  background: #fff;
+}
+.radio radio{
+  margin-left: 30rpx;
+}
+ 
+button{
+  position: absolute;
+   bottom: 0;
+   left:30%;
+   right:70%;
+}
+ 
+.modal view{
+  text-align: center;
+}

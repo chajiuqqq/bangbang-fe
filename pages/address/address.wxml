@@ -1,0 +1,7 @@
+<view class="order-item" wx:for="{{list}}" wx:key="id">
+	<view class="content">
+	{{item.address}}
+	</view>
+	<button class="alter" size="mini">{{text1}}</button>
+</view>
+<button class="bottombutton" style="width:94%">{{text2}}</button>
