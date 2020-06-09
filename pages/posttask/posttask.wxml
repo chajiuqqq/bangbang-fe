@@ -1,0 +1,52 @@
+<view class="kuang">
+<!-- 	<view class="leftcontent" style="padding-top:15rpx">{{text1}}</view>
+	<input type="text" placeholder="请输入您的姓名"/>
+	<view class="leftcontent">{{text2}}</view>
+	<input type="text" placeholder="请输入您的联系电话"/>
+	<view class="leftcontent">{{text3}}</view>
+	<input type="text" placeholder="请输入您的收货地址"/>
+	<view class="leftcontent">{{text4}}</view>
+	<input type="text" placeholder="请输入您的取件地址"/>
+	<view class="leftcontent">{{text5}}</view>
+	<input type="text" placeholder="请选择您的期望送达时间"/> -->
+	<view class="topcontent">
+		<text >{{text1}}</text>
+		<input type="text" placeholder="请输入您的姓名"/>
+	</view>
+	<view class="leftcontent">
+		<text >{{text2}}</text>
+		<input type="text" placeholder="请输入您的联系电话"/>
+	</view>
+	<view class="leftcontent">
+		<text>{{text3}}</text>
+		<input type="text" placeholder="请输入您的收货地址"/>
+	</view>
+	<view class="leftcontent">
+		<text >{{text4}}</text>
+		<input type="text" placeholder="请输入您的取件地址"/>
+	</view>
+	<view class="leftcontent">
+		<text >{{text5}}</text>
+		<!-- <input type="text" placeholder="请选择您的期望送达时间"/> -->
+		   <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+		    <view class="picker" style="color:#8B8B8B;font-size:34rpx">
+		      {{array[index]}}
+		    </view>
+		  </picker>
+	</view>
+	<view class="leftcontent">{{text6}}</view>
+	<view >
+		 <textarea class="areas" placeholder='可以在这里写下您的要求噢~' maxlength="{{max}}" bindinput="inputs"> 
+	        <text class="currentWordNumber">{{currentWordNumber}}/{{max}}</text>
+	    </textarea>
+	</view>
+	<view class="topcontent">
+		<text class="leftcontent">{{text7}}</text>
+		<input type="text" value="{{price}}" style="width:95rpx" data-price="{{price}}" />
+		<button class="bottombutton" size="mini" style="width:35%" bind:tap="changeprice">{{text8}}</button>
+	</view>
+	<view>
+		<button class="leftbutton" style="width:35%" >{{text9}}</button>
+		<button class="rightbutton" style="width:35%" >{{text10}}</button>
+	</view>
+</view>

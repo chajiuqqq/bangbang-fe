@@ -1,0 +1,48 @@
+/* pages/page2/page2.wxss */
+page{
+  background: #eee;
+}
+.baseInfo{
+  padding:20rpx 10rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.baseInfo image{
+  width: 10rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.baseInfo text{
+  font-size: 28rpx;
+  color: #6f6f6f;
+}
+.name,.phone,.info,.ads,.school{
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.name input,.phone input,.info input,.ads input,.school input,.studentid input,.college input {
+  text-align:right;
+}
+.sex{
+  background: #fff;
+}
+.radio radio{
+  margin-left: 30rpx;
+}
+ 
+button{
+  position: absolute;
+   bottom: 0;
+   left:30%;
+   right:70%;
+}
+ 
+.modal view{
+  text-align: center;
+}
