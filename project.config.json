@@ -15,6 +15,10 @@
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false
 	},
+	"useExtendedLib": {
+		"kbone": true,
+		"weui": true
+	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.1",
 	"appid": "wx5f2aa8ded12eb5eb",

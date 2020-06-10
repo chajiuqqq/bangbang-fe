@@ -1,0 +1,30 @@
+.main{
+  width: 100%;
+  border-radius: 4px;
+  background-color: white;
+  padding: 10px;
+
+}
+.top{
+  width: 100%;
+  height: 20%;
+}
+.bottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.order-status{
+  float: right;
+  margin-right: 20px;
+  color: grey;
+}
+.order-pay{
+  color: red;
+}
+.bottom{
+  width: 100%;
+  height: 80%;
+}

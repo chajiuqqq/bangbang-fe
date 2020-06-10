@@ -1,0 +1,15 @@
+<view class="main">
+  <view class="top">
+    <text class="orderId-text">订单编号:{{orderId}}</text>
+    <text class="order-status">{{statusText}}</text>
+  </view>
+
+  <view class="bottom">
+      <text>任务：{{content}}</text>
+      <text>下单时间：{{createTime}}</text>
+      <text class="order-pay">金额：{{amount}}</text>
+  </view>
+
+  
+
+</view>

@@ -1,0 +1,25 @@
+<view class="main">
+<!-- 左侧tabbar -->
+  <view class="tabbar">
+    <block wx:for="{{leftItemList}}">
+      <view class="bar-item {{selectedIndex == index ? 'on' :''}}" bindtap="bindBarTap" data-index="{{index}}">{{item.text}}</view>
+    </block>
+  </view>
+
+<!-- 右侧swiper -->
+    <swiper class="swiper-container" current="{{currentIndex}}" vertical="true" bindchange="bindSwiperChange">
+      <block wx:for="{{orderList}}">
+        <swiper-item class="swiper-item">
+          <scroll-view class="scroll-view" scroll-y="true">
+              <block wx:for="{{item}}" wx:for-item="order">
+                  <view class="order-item-container">
+                    <order-item class="order-item" orderId="{{order.orderId}}" status="{{order.status}}" content="{{order.content}}" createTime="{{order.createTime}}" 
+                    amount="{{order.amount}}"></order-item>
+                  </view>
+              </block>
+          </scroll-view>
+        </swiper-item>
+      </block>
+    </swiper>
+
+</view>
