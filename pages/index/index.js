@@ -4,25 +4,26 @@ const app = getApp()
 
 Page({
   data: {
-    text1:"抢单",
+    text1:"附近订单",
+    post:"发布订单",
     text2:"订单编号：",
     // tasknum:"20200602",
     // name:"张三李四",
     text3:"任务：",
     // task:"取快递",
-    text4:"下单时间：",
+    text4:"期望送达时间：",
     text5:"佣金：",
     // tasktime:"20200602 14:29",
     text6:"￥",
     // taskprice:"15",
-    text7:"抢单",
+    text7:"接单",
     list:[
       {
         id:0,
         tasknum:"20200602",
         name:"蔡佳晨",
         task:"取快递",
-        tasktime:"20200602 14:29",
+        tasktime:"13:00-14:00",
         taskprice:"15",
         phonenum:"17717969475",
         address:"上海奉贤",
@@ -33,7 +34,7 @@ Page({
         tasknum:"20200603",
         name:"周莹",
         task:"取外卖",
-        tasktime:"20200603 17:29",
+        tasktime:"8:00-9:00",
         phonenum:"13567800818",
         taskprice:"10",
         address:"浙江宁波",
@@ -44,7 +45,7 @@ Page({
         tasknum:"20200604",
         name:"王登辉",
         task:"打印",
-        tasktime:"20200603 19:16",
+        tasktime:"19:00-20:00",
         taskprice:"8",
         phonenum:"13984271804",
         address:"贵州遵义",
@@ -55,7 +56,7 @@ Page({
         tasknum:"20200605",
         name:"张世明",
         task:"取快递",
-        tasktime:"20200604 9:16",
+        tasktime:"9:00-10:00",
         taskprice:"12",
         phonenum:"19121549171",
         address:"上海普陀",
@@ -66,7 +67,7 @@ Page({
         tasknum:"20200606",
         name:"张智斌",
         task:"取外卖",
-        tasktime:"20200604 12:13",
+        tasktime:"12:00-13:00",
         taskprice:"10",
         phonenum:"13501702595",
         address:"上海浦东",
@@ -91,11 +92,14 @@ Page({
     })
 
 },
-  gotopost:function(){
-    wx.navigateTo({
-      url:"../posttask/posttask"
-    })
-  },
+GetThisTask:function(e){
+
+},
+  // gotopost:function(){
+  //   wx.navigateTo({
+  //     url:"../posttask/posttask"
+  //   })
+  // },
   //事件处理函数
   bindViewTap: function() {
    

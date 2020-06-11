@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/mytask/mytask",
+    "pages/posttask/posttask",
     "pages/index/index",
+    "pages/mytask/mytask",
     "pages/mytaskinfo/mytaskinfo",
     "pages/makesurehelper/makesurehelper",
     "pages/address/address",
     "pages/me/me",
-    "pages/posttask/posttask",
+    
     "pages/task/task",
     "pages/evaluatetask/evaluatetask",
     "pages/myinformation/myinformation",
@@ -34,6 +35,12 @@
         "selectedIconPath": "photos/tuijian1.png"
       },
       {
+        "pagePath": "pages/posttask/posttask",
+        "text": "发布订单",
+        "iconPath": "photos/jiahao.png",
+        "selectedIconPath": "photos/jiahao1.png"
+      },
+      {
         "pagePath": "pages/mytask/mytask",
         "text": "我的订单",
         "iconPath": "photos/mytask.png",
@@ -45,6 +52,7 @@
         "iconPath": "photos/me.png",
         "selectedIconPath": "photos/me1.png"
       }
+      
     ]
   },
   "style": "v2",

@@ -2,16 +2,18 @@
 <view class="container">
     <view class="top">
         <text class="title">{{text1}}</text>
-        <image mode="widthFix" style="width:70rpx;position: absolute;right: 10px;" src="../../photos/jia.png" bindtap="gotopost"></image>
+       
+         <!--  <image mode="widthFix" style="width:70rpx;position: absolute;right: 10px;" src="../../photos/jia.png" bindtap="gotopost"></image> -->
+         <!--  <button class="post" size="mini" style="width:30%" bindtap="gotopost">{{post}}</button> -->
+        
     </view>
     <scroll-view scroll-y="true" class="content">
-            <view class="order-item" wx:for="{{list}}" wx:key="id">
-
+            <view class="order-item" wx:for="{{list}}" wx:key="id" >
+              <view bind:tap="gotodetail">
                 <view class="tasknumber">
                       <text> {{text2}} </text>
                       <text> {{item.tasknum}}</text>
                 </view>
-                <view>
                       <view style="width:26%" class="view">
                           <image circle mode="widthFix" class="img" src="../../photos/me.png" ></image>
                           <view style="padding-left:20rpx;padding-bottom:20rpx;font-size:27rpx;padding-left:35rpx">{{item.name}}</view>
@@ -22,14 +24,17 @@
                           <view class="rightcontent"><text>{{text4}}</text><text>{{item.tasktime}}</text></view>
                           <view class="rightcontent"><text>{{text5}}</text><text class="price">{{text6}}</text><text class="price">{{item.taskprice}}</text></view>
                       </view>
+                      </view>
+
                       <view class="line"></view>
                       <view class="qiangdan" data-name="{{item.name}}" data-tasknum="{{item.tasknum}}"
                       data-task="{{item.task}}" data-tasktime="{{item.tasktime}}" data-taskprice="{{item.taskprice}}"
                       data-phonenum="{{item.phonenum}}"
                       data-address="{{item.address}}"
-                      data-request="{{item.request}}" bindtap="gotodetail">{{text7}}</view>
-                </view>
-            </view>
+                      data-request="{{item.request}}" 
+                      bindtap="GetThisTask">{{text7}}</view>
+                
+              </view>
 
     </scroll-view>
 

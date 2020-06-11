@@ -3,18 +3,25 @@
 	text-align: center;
 }
 .title{
-	background-color: #FED803;
-	color:#8A8A8A;
+	background-color: #AAA9A9;
+	color:white;
 	border-radius: 10rpx;
 	display: inline-block;
-	width: 90px;
-	height: 25px;
+	width: 100px;
+	height: 30px;
 	padding-top: 7px;
+	margin-bottom: -10rpx;
+/*	float:left;
+	margin-left: 220rpx;*/
 }
+
+
 .order-item{
 	width:94%;
-    height:340rpx;
-    margin: 27rpx;
+    height:360rpx;
+    margin-left: 27rpx;
+    margin-right: 27rpx;
+    margin-top: 35rpx;
     border-radius: 10rpx;
     box-shadow:0px 2px 3px 3px lightgrey;
 }
@@ -53,10 +60,11 @@
 .qiangdan{
 	color:#F85858;
 	font-weight:bold;
-	float:right;
-	padding-right:30rpx;
+	/*float:right;*/
+	/*padding-right:30rpx;*/
+	text-align: center;
 	font-size:larger;
-	margin-top: 15rpx;
-	padding-bottom: 15rpx;
+	margin-top: 10rpx;
+	padding-bottom: 10rpx;
 	letter-spacing: 25rpx;
 }
