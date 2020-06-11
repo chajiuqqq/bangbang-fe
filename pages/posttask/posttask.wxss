@@ -58,7 +58,7 @@ input{
 	/*float:left;
   margin-left: 200rpx;*/
 	text-align: center;
-	margin-top: 50rpx;
+	margin-top: 70rpx;
 }
 /*.rightbutton{
 	background-color: #FED803;

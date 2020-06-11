@@ -1,0 +1,5 @@
+<!--pages/authority/authority.wxml-->
+<view class="main">
+<text>授权获取用户信息：</text>
+<button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">点击授权</button>
+</view>

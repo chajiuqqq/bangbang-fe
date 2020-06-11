@@ -1,32 +1,35 @@
 <view class='baseInfo'>
   
-  <text>个人信息</text>
 </view>
  
 <form bindsubmit="formSubmit">
 
   <view class='name'>
     <text>昵称</text>
-    <input name="name" type='text' placeholder-style='font-size:28rpx;' placeholder='请输入你的昵称'></input>
+    <input name="nickename" type='text' placeholder-style='font-size:28rpx;' onshow="getname"></input>
   </view>
  
 
 <view class='school'>
     <text>学校</text>
-    <input name="idSchool" type='text' placeholder-style='font-size:28rpx;' placeholder='学校名称'></input>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker" style="color:#8B8B8B;font-size:34rpx">
+          {{array[index]}}
+        </view>
+      </picker>
 </view>
 
  <view class='ads'>
- <text>常用地址</text>
- <input name="idAds" type='text' placeholder-style='font-size:28rpx;' placeholder='请输入您的常用地址'></input>
+ <text>手机号</text>
+ <input name="phone" type='text' placeholder-style='font-size:28rpx;' placeholder='请输入您的手机号'></input>
  </view>
-<button form-type='submit' type='primary'>提交</button>
+
+  <button form-type='submit' type='primary'>提交</button>
 </form>
 
 <!-- 模态框 -->
 <modal class="modal" title='要提交的信息' hidden="{{modalHidden}}" bindcancel='modalCancel' bindconfirm='modalConfirm'>
-    <view>昵称:{{information.name}}</view>
-    <view>学校：{{information.idSchool}}</view>
-   <!--<view>学号：{{information.idSchool}}</view>-->
-    <view>常用地址：{{information.idAds}}</view>
+    <view>昵称:{{information.nickename}}</view>
+    <view>学校：{{information.schoolName}}</view>
+    <view>手机号：{{information.phone}}</view>
 </modal>

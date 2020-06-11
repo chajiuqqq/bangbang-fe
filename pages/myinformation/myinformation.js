@@ -6,26 +6,33 @@ Page({
   data: {
     
     information:[],
-    modalHidden:true
+    modalHidden:true,
+    array: ['上海交通大学', '复旦大学', '华东师范大学', '华东政法大学', '上海师范大学', '华东理工大学', '东华大学', '上海大学', '上海外国语大学', '同济大学', '华东政法大学','上海财经大学'],
+    index: 0,
+    avatarUrl:''
   },
-  //单选按钮发生变化
-  radioChange(e){
-    console.log(e.detail.value);
-    var sexName=this.data.isSex
+  onshow:function(){
+    this.setdata({
+      avatarUrl:getApp().globalData.userInfo.avatarUrl
+    });
+  },
+
+  bindPickerChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      isSex:e.detail.value
+      index: e.detail.value
     })
+  },
+  getname:function(){
+    getApp().globalData.userInfo.nickname;
   },
  
   //表单提交
   formSubmit(e){
     console.log(e);
-    var userSex=this.data.isSex==0?'男':'女';
     var information= e.detail.value;
-    console.log(userSex);
     this.setData({
       information: e.detail.value,
-      userSex,
       modalHidden:false
     });
   },

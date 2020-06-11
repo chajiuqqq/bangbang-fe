@@ -1,0 +1,19 @@
+
+<view>
+  <mp-form>
+    <mp-cells  title="新建地址" >
+            <mp-cell prop="addressee" title="收件人" ext-class="">
+                      <input bindinput="formInputChange" data-field="addressee" class="weui-input" placeholder="请输入收件人姓名"/>
+            </mp-cell>
+            <mp-cell prop="phone" title="手机号" ext-class="">
+                      <input bindinput="formInputChange" data-field="phone" class="weui-input" placeholder="请输入手机号"/>
+            </mp-cell>
+            <mp-cell prop="address" title="地址" ext-class="">
+                      <input bindinput="formInputChange" data-field="address" class="weui-input" placeholder="请输入地址"/>
+            </mp-cell>
+    </mp-cells>
+    <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+
+  </mp-form>
+
+</view>

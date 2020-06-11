@@ -46,6 +46,7 @@
   }
   .icon{
   	width:70rpx;
+    margin-top: 15rpx;
   	float: left;
   	display: inline-flex;
   }

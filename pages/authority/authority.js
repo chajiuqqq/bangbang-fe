@@ -1,19 +1,33 @@
-// pages/me/me.js
+// pages/authority/authority.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    text1:"个人信息",
-    text2:"帮手认证",
-    text3:"常用地址",
-    text4:"修改密码",
-    name:"张三李四"
+
   },
-  getname:function(){
-    getApp().globalData.userInfo.nickname;
+  bindgetuserinfo:function(e){
+    wx.authorize({
+      scope: 'scope.userInfo',
+      success:function(){
+        wx.showToast({
+          title: '授权成功'
+        })
+        setTimeout(() => {
+          wx.hideToast({
+            complete: (res) => {},
+          })
+        }, 1500);
+      },
+      complete:function(){
+        wx.switchTab({
+          url: '/pages/index/index'
+        })
+      }
+    })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */

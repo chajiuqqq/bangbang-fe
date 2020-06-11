@@ -53,23 +53,14 @@ page{
   align-content: center;
   align-items: center;
   padding: 20rpx;
-  border-bottom: 1rpx solid rgb(16, 224, 26);
+  border-bottom: 1rpx solid #eee;
 }
 .name input,.phone input,.info input,.ads input,.school input,.studentid input,.college input {
   text-align:right;
 }
-.sex{
-  background: #fff;
-}
-.radio radio{
-  margin-left: 30rpx;
-}
  
 button{
-  position: absolute;
-   bottom: 0;
-   left:30%;
-   right:70%;
+  margin:30px auto
 }
  
 .modal view{

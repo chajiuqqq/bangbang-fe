@@ -10,6 +10,8 @@
   height: 20%;
 }
 .bottom{
+  width: 100%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -24,7 +26,7 @@
 .order-pay{
   color: red;
 }
-.bottom{
-  width: 100%;
-  height: 80%;
+.myButton{
+  margin-left: 120px;
+
 }
