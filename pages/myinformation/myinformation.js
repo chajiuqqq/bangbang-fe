@@ -8,24 +8,13 @@ Page({
     information:[],
     modalHidden:true
   },
-  //单选按钮发生变化
-  radioChange(e){
-    console.log(e.detail.value);
-    var sexName=this.data.isSex
-    this.setData({
-      isSex:e.detail.value
-    })
-  },
  
   //表单提交
   formSubmit(e){
     console.log(e);
-    var userSex=this.data.isSex==0?'男':'女';
     var information= e.detail.value;
-    console.log(userSex);
     this.setData({
       information: e.detail.value,
-      userSex,
       modalHidden:false
     });
   },

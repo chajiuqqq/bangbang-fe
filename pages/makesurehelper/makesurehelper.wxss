@@ -37,10 +37,7 @@ page{
 }
  
 button{
-  position: absolute;
-   bottom: 0;
-   left:30%;
-   right:70%;
+  margin:30px auto;
 }
  
 .modal view{

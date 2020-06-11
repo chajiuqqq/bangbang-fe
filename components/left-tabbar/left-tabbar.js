@@ -27,6 +27,10 @@ Component({
         selectedIndex: e.detail.current
       })
     }
+  },
+  bindButtonTap:function(e){
+    console.log(e)
   }
+
  }
 })

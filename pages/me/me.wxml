@@ -1,12 +1,26 @@
 <!--pages/page1/page1.wxml-->
+<!-- 上方 -->
 <view class="red">
 	<view class="imagesize">
 		<image src="../../photos/me.png" mode="widthFix" ></image>
 	</view>
-	<view style="margin-top:10rpx;text-align:center;font-size:larger">{{name}}
+	<view style="margin-top:10rpx;text-align:center;font-size:larger">
+		{{name}}
 	</view>
 	<view class="line"></view>
 </view>
+
+<!-- 个人信息 -->
+<navigator url="../myinformation/myinformation">
+<view class="title">
+	<image class="icon" mode="widthFix" src="../../photos/information.png"></image>
+	<view class="left">{{text3}}</view>
+	<image class="right" mode="widthFix" src="../../photos/right.png"></image>
+</view>
+</navigator>
+
+
+<!-- 常用地址 -->
 <view>
 <navigator url="../address/address">
 <view class="toptitle">
@@ -16,26 +30,11 @@
 </view>
 </navigator>
 
+<!-- 帮手认证 -->
 <navigator url="../makesurehelper/makesurehelper">
 <view class="title">
 	<image class="icon" mode="widthFix" src="../../photos/makesure.png"></image>
 	<view class="left">{{text2}}</view>
-	<image class="right" mode="widthFix" src="../../photos/right.png"></image>
-</view>
-</navigator>
-
-<navigator url="../myinformation/myinformation">
-<view class="title">
-	<image class="icon" mode="widthFix" src="../../photos/information.png"></image>
-	<view class="left">{{text3}}</view>
-	<image class="right" mode="widthFix" src="../../photos/right.png"></image>
-</view>
-</navigator>
-
-<navigator url="../password/password">
-<view class="bottom">
-	<image class="icon" mode="widthFix" src="../../photos/password.png"></image>
-	<view class="left">{{text4}}</view>
 	<image class="right" mode="widthFix" src="../../photos/right.png"></image>
 </view>
 </navigator>

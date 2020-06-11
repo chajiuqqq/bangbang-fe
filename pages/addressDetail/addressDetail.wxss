@@ -1,0 +1,4 @@
+/* pages/addressDetail.wxss */
+.weui-btn{
+  margin-top: 30px;
+}

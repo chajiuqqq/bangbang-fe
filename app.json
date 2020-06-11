@@ -1,16 +1,18 @@
 {
   "pages": [
-    "pages/mytask/mytask",
     "pages/index/index",
+    "pages/me/me",
+    "pages/mytask/mytask",
+    "pages/address/address",
     "pages/mytaskinfo/mytaskinfo",
     "pages/makesurehelper/makesurehelper",
-    "pages/address/address",
-    "pages/me/me",
     "pages/posttask/posttask",
     "pages/task/task",
     "pages/evaluatetask/evaluatetask",
     "pages/myinformation/myinformation",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/addressDetail/addressDetail",
+    "pages/authority/authority"
   ],
   "useExtendedLib": {
     "weui": true

@@ -5,28 +5,63 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[{
-      id:0,
-      address:"五教102"
-    },
-    {
-      id:1,
-      address:"33楼306" 
-    },
-    {
-      id:2,
-      address:"菜鸟驿站"
-    },
-    {
-      id:3,
-      address:"三教201"
-    },
-    {
-      id:4,
-      address:"四教403"
-    }],
+    "addresses": [
+      {
+        "address": "四教310",
+        "addressee": "蔡芳",
+        "phone": "13311111111",
+        "id": 123
+      },
+      {
+        "address": "四教310",
+        "addressee": "郝磊",
+        "phone": "13311111111",
+        "id": 124
+      },
+      {
+        "address": "四教310",
+        "addressee": "郝芳",
+        "phone": "13311111111",
+        "id": 125
+      },
+      {
+        "address": "四教310",
+        "addressee": "邓娜",
+        "phone": "13311111111",
+        "id": 126
+      },
+      {
+        "address": "四教310",
+        "addressee": "熊军",
+        "phone": "13311111111",
+        "id": 127
+      },
+      {
+        "address": "四教310",
+        "addressee": "顾刚",
+        "phone": "13311111111",
+        "id": 128
+      },
+      {
+        "address": "四教310",
+        "addressee": "万平",
+        "phone": "13311111111",
+        "id": 129
+      },
+      {
+        "address": "四教310",
+        "addressee": "戴超",
+        "phone": "13311111111",
+        "id": 130
+      }
+    ],
     text1:"编辑",
     text2:"添加新地址"
+  },
+  turnto:function(){
+    wx.navigateTo({
+      url: '/pages/addressDetail/addressDetail'
+    })
   },
 
   /**

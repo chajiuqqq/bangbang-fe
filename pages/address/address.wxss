@@ -1,26 +1,35 @@
 .order-item{
-	width:94%;
+		width:90%;
     height:150rpx;
-    margin: 27rpx;
+    margin: 15px auto;
     border-radius: 10rpx;
-    box-shadow:0px 2px 3px 3px lightgrey;
+		box-shadow:0px 2px 3px 3px lightgrey;
+		display: flex;
 }
 .content{
-	padding-top: 30rpx;
+	padding-top: 20rpx;
 	padding-left: 35rpx;
 	font-size: large;
-	display: inline-flex;
+	width: 70%;
 }
 .alter{
 	color:grey;
-	display: inline-flex;
 	float:right;
-	margin-top: 30rpx;
-	margin-right: 35rpx;
+	margin-top: 18px;
 }
 .bottombutton{
 	background-color: #FED803;
 	color:#57502C;
-	margin-top: 220rpx; 
+	margin: 30px;
 	border-radius: 15rpx
+}
+.font{
+	color: grey;
+	font-size: small;
+}
+.phone-text{
+	margin-left: 10px;
+}
+.address-text{
+	display: block;
 }

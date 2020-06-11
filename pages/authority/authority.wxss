@@ -1,0 +1,8 @@
+/* pages/authority/authority.wxss */
+.main{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-around;
+  align-items: center;
+}
