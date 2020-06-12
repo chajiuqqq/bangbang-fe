@@ -6,13 +6,17 @@
 
   <view class='name'>
     <text>昵称</text>
-    <input name="nickename" type='text' placeholder-style='font-size:28rpx;' placeholder='请输入你的昵称'></input>
+    <input name="nickename" type='text' placeholder-style='font-size:28rpx;' onshow="getname"></input>
   </view>
  
 
 <view class='school'>
     <text>学校</text>
-    <input name="schoolName" type='text' placeholder-style='font-size:28rpx;' placeholder='学校名称'></input>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker" style="color:#8B8B8B;font-size:34rpx">
+          {{array[index]}}
+        </view>
+      </picker>
 </view>
 
  <view class='ads'>

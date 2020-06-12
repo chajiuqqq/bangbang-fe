@@ -2,9 +2,10 @@
 <!-- 上方 -->
 <view class="red">
 	<view class="imagesize">
-		<image src="../../photos/me.png" mode="widthFix" ></image>
+		<image src="{{avatarUrl}}" mode="widthFix" ></image>
 	</view>
-	<view style="margin-top:10rpx;text-align:center;font-size:larger">
+	<view style="margin-top:10rpx;text-align:center;font-size:larger"
+	onshow="name">
 		{{name}}
 	</view>
 	<view class="line"></view>
@@ -14,7 +15,7 @@
 <navigator url="../myinformation/myinformation">
 <view class="title">
 	<image class="icon" mode="widthFix" src="../../photos/information.png"></image>
-	<view class="left">{{text3}}</view>
+	<view class="left">{{text1}}</view>
 	<image class="right" mode="widthFix" src="../../photos/right.png"></image>
 </view>
 </navigator>
@@ -25,7 +26,7 @@
 <navigator url="../address/address">
 <view class="toptitle">
 	<image class="icon1" mode="widthFix" src="../../photos/address.png"></image>
-	<view class="topleft">{{text1}}</view>
+	<view class="topleft">{{text3}}</view>
 	<image class="right" mode="widthFix" src="../../photos/right.png"></image>
 </view>
 </navigator>

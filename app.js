@@ -2,11 +2,14 @@
 App({
   onLaunch: function () {
     console.info('loading app...');
+<<<<<<< HEAD
     wx.login({
       success: (res) => {
         console.info(res)
       },
     })
+=======
+>>>>>>> 23a1043cf99798c6518940a02faeeaf27743e1fd
     // wx.showLoading({
     //   title: '登录中',
     //   mask: true

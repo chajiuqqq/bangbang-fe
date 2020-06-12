@@ -40,7 +40,9 @@ inputs: function (e) {
     console.log(this.data)
   },
 
+  GetThisTask:function(e){
 
+  },
 
 
   /**

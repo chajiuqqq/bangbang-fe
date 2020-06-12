@@ -31,5 +31,5 @@
         <text class="currentWordNumber">{{currentWordNumber}}/{{max}}</text>
     </textarea>
 </view>
-<button class="bottombutton" style="width:94%">{{text8}}</button>
+<button class="bottombutton" style="width:94%" bind:tap="GetThisTask">{{text8}}</button>
 

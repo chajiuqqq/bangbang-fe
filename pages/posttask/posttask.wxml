@@ -9,14 +9,14 @@
 	<input type="text" placeholder="请输入您的取件地址"/>
 	<view class="leftcontent">{{text5}}</view>
 	<input type="text" placeholder="请选择您的期望送达时间"/> -->
-	<view class="topcontent">
+	<!-- <view class="topcontent">
 		<text >{{text1}}</text>
 		<input type="text" placeholder="请输入您的姓名"/>
 	</view>
 	<view class="leftcontent">
 		<text >{{text2}}</text>
 		<input type="text" placeholder="请输入您的联系电话"/>
-	</view>
+	</view> -->
 	<view class="leftcontent">
 		<text>{{text3}}</text>
 		<input type="text" placeholder="请输入您的收货地址"/>
@@ -41,12 +41,12 @@
 	    </textarea>
 	</view>
 	<view class="topcontent">
-		<text class="leftcontent">{{text7}}</text>
+		<text class="leftcontent" style="display:inline-block">{{text7}}</text>
 		<input type="text" value="{{price}}" style="width:95rpx" data-price="{{price}}" />
 		<button class="bottombutton" size="mini" style="width:35%" bind:tap="changeprice">{{text8}}</button>
 	</view>
 	<view>
-		<button class="leftbutton" style="width:35%" >{{text9}}</button>
-		<button class="rightbutton" style="width:35%" >{{text10}}</button>
+		<button class="leftbutton" style="width:65%" >{{text9}}</button>
+		<!-- <button class="rightbutton" style="width:35%" >{{text10}}</button> -->
 	</view>
 </view>
