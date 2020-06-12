@@ -2,10 +2,15 @@
 App({
   onLaunch: function () {
     console.info('loading app...');
-    wx.showLoading({
-      title: '登录中',
-      mask: true
-    });
+    wx.login({
+      success: (res) => {
+        console.info(res)
+      },
+    })
+    // wx.showLoading({
+    //   title: '登录中',
+    //   mask: true
+    // });
   },
   
   //检测是否登录
@@ -138,8 +143,10 @@ App({
     obj.header = {
       skey: skey
     };
+    
     return wx.request(obj);
   },
+  
   globalData: {
     //默认值
     userInfo: {
