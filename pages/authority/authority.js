@@ -21,8 +21,9 @@ Page({
         }, 1500);
       },
       complete:function(){
-        wx.switchTab({
-          url: '/pages/index/index'
+        getApp().registerUser(function(){})
+        wx.navigateBack({
+          complete: (res) => {},
         })
       }
     })

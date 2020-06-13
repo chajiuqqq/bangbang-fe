@@ -1,11 +1,21 @@
 .kuang{
-	  width:90%;
-    height:1150rpx;
-    /*border-radius: 10rpx;*/
-    /*box-shadow:0px 2px 3px 3px lightgrey;*/
-    margin:5px auto;
-    padding: 5px 10px;
-
+    width:100%;
+    height: 100vh;
+  background-color: #eee;
+  padding-top: 20px;
+}
+.icon{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+input{
+  margin-left: 10px;
+  width: 160px;
+}
+.align-center{
+  display: flex;
+  align-items: center;
 }
 .areas{
   height:280rpx;
@@ -27,18 +37,33 @@
   left: 480rpx;
   bottom: 2rpx;
 }
-.topcontent{
-  font-size: 40rpx;
+.center{
+  padding: 20px;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  border-radius: 15px;
+  
+}
+.bottom{
   display: flex;
   align-items: center;
-  margin: 10px 0px;
+  width: 90%;
+  margin:20px auto;
+
 }
 .leftcontent{
-  font-size: 40rpx;
   display: flex;
-  align-items: center;
-  margin: 15px 0px;
+  flex-direction: column;
+  padding: 20px 20px 20px 20px;
+  background-color: white;
+  width: 80%;
+  margin: 0px auto 20px auto;
+
+  border-radius: 10px;
   
+
+
 }
 input{
 	display: inline-block;
@@ -47,27 +72,29 @@ input{
 .bottombutton{
 	background-color: #D8D5D5;
 	color:#57502C;
-	border-radius: 15rpx;
 	display: inline-block;
 }
 .leftbutton{
 	background-color: #FED803;
 	color:#57502C;
 	border-radius: 15rpx;
-	/*display: inline-block;*/
-	/*float:left;
-  margin-left: 200rpx;*/
 	text-align: center;
 	margin-top: 70rpx;
 }
-/*.rightbutton{
-	background-color: #FED803;
-	color:#57502C;
-	border-radius: 15rpx;
-	display: inline-block;
-	float:right;
-	margin-right: 180rpx;
-	text-align: center;
-	margin-top: 30rpx;
-	margin-top: 20rpx;
-}*/
+.address-item{
+  width: 170px;
+  margin-left: 10px;
+}
+.address-text{
+  display: block;
+  color: grey;
+
+}
+.bold{
+  font-weight: bold;
+}
+.bottom-border{
+  border-bottom: solid grey 1px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}

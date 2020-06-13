@@ -75,3 +75,7 @@
 	margin-top: 36rpx;
 	border-radius: 15rpx
 }
+.content{
+	display: block;
+	background-color: #eee;
+}

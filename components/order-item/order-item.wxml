@@ -4,11 +4,11 @@
     <text class="order-status">{{statusText}}</text>
   </view>
 
-  <view class="bottom">
+  <view class="bottom" catchtap="turnto">
       <text>任务：{{content}}</text>
       <text>下单时间：{{createTime}}</text>
       <text class="order-pay">金额：{{amount}}</text>
-      <button size="mini" type="primary" class="myButton" catchtap="onTap" style="width: 100px;">here</button>
+      <button size="mini" type="primary" class="myButton" catchtap="onTap">{{buttonText}}</button>
   </view>
 
   

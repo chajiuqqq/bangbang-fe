@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/myinformation/myinformation",
-    "pages/makesurehelper/makesurehelper",
-    "pages/posttask/posttask",
     "pages/index/index",
     "pages/me/me",
-    "pages/mytask/mytask",
     "pages/address/address",
+    "pages/makesurehelper/makesurehelper",
+    "pages/myinformation/myinformation",
+    "pages/posttask/posttask",
+    "pages/mytask/mytask",
     "pages/mytaskinfo/mytaskinfo",
     "pages/task/task",
     "pages/evaluatetask/evaluatetask",
@@ -53,7 +53,6 @@
         "iconPath": "photos/me.png",
         "selectedIconPath": "photos/me1.png"
       }
-      
     ]
   },
   "style": "v2",

@@ -1,5 +1,5 @@
 module.exports = {
-  host: 'https://i4wt4wyj.qcloud.la',
+  host: 'https://www.chajiuqqq.cn/yy',
   //RESTful API的版本号
   apiVersion: 'v1'
 };

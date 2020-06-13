@@ -4,17 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    touxiang: 'https://manager.diandianxc.com/diandianxc/mrtx.png',
-    icon_r: 'https://manager.diandianxc.com/mine/enter.png',
-    sex:[
-      {name:'0',value:'男',checked:'true'},
-      {name:'1',value:'女'}
-    ],
-    isSex:"0",
     information:[],
     userSex:'',
     modalHidden:true,
-    array: ['上海交通大学', '复旦大学', '华东师范大学', '华东政法大学', '上海师范大学', '华东理工大学', '东华大学', '上海大学', '上海外国语大学', '同济大学', '华东政法大学','上海财经大学'],
     index: 0
   },
   bindPickerChange: function(e) {
@@ -37,15 +29,16 @@ Page({
  
   //表单提交
   formSubmit(e){
-    console.log(e);
-    var userSex=this.data.isSex==0?'男':'女';
-    var information= e.detail.value;
-    console.log(userSex);
     this.setData({
-      information: e.detail.value,
-      userSex,
       modalHidden:false
     });
+  },
+  
+  formInputChange:function(e){
+    let {field} = e.currentTarget.dataset
+    this.setData({
+      [`${field}`]:e.detail.value
+    })
   },
  
   //模态框取消
@@ -60,15 +53,52 @@ Page({
   },
   //模态框确定
   modalConfirm() {
-    wx.showToast({
-      title: '提交成功',
-      icon:'success'
+    wx.showLoading({
+      title: '正在提交',
     })
+    let that = this
+    getApp().request({
+      url:'/user',
+      method:'PUT',
+      data:{
+        name:that.data.name,
+        phoneNumber:that.data.phone,
+        identityId:that.data.identityId
+      },
+      success:(res)=>{
+        if(res.statusCode ==200){
+          wx.showToast({
+            title: '提交成功'
+          })
+          getApp().getUserInfo(function(){})
+          setTimeout(() => {
+            wx.navigateBack({
+              complete: (res) => {},
+            })
+          }, 1500);
+        }
+      },
+      fail:(err)=>{
+        console.log(err)
+        wx.showToast({
+          title: '操作失败',
+          icon:'none'
+        })
+      }
+    })
+
     this.setData({
       modalHidden: true
     })
   },
   onLoad: function (options) {
   
+  },
+  onShow:function(){
+    this.setData({
+      name: getApp().globalData.userInfo.name || '',
+      phone:getApp().globalData.userInfo.phoneNumber || '',
+      identityId: getApp().globalData.userInfo.identityId || ''
+    })
   }
 })

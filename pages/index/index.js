@@ -95,16 +95,13 @@ Page({
 GetThisTask:function(e){
 
 },
-  // gotopost:function(){
-  //   wx.navigateTo({
-  //     url:"../posttask/posttask"
-  //   })
-  // },
-  //事件处理函数
   bindViewTap: function() {
    
   },
   onLoad: function () {
+    getApp().checkLogin(function(){
+      console.log('cd 执行...')
+    })
   },
   getUserInfo: function(e) {
    

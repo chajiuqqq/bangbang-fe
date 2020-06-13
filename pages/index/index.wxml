@@ -1,11 +1,9 @@
 <!--index.wxml-->
 <view class="container">
     <view class="top">
+        <image src="/photos/position.png" class="locIcon"></image>
+        <text class="loc-text">上海师范大学</text>
         <text class="title">{{text1}}</text>
-       
-         <!--  <image mode="widthFix" style="width:70rpx;position: absolute;right: 10px;" src="../../photos/jia.png" bindtap="gotopost"></image> -->
-         <!--  <button class="post" size="mini" style="width:30%" bindtap="gotopost">{{post}}</button> -->
-        
     </view>
     <scroll-view scroll-y="true" class="content">
             <view class="order-item" wx:for="{{list}}" wx:key="id" >

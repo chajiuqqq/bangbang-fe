@@ -1,12 +1,12 @@
 
 <button class="bottombutton" style="width:94%" bindtap="turnto">{{text2}}</button>
 <view class="order-item" wx:for="{{addresses}}" wx:key="id">
-	<view class="content">
+	<view class="content" catchtap="bindChoose" data-item="{{item}}">
 	 	<text class="addressee-text font">{{item.addressee}}</text> 
 	 	<text class="phone-text font">{{item.phone}}</text>
 		<text class="address-text">{{item.address}}</text>
 	</view>
 	<view>
-		<button class="alter" size="mini">{{text1}}</button>
+		<button class="alter" size="mini" data-address="{{item}}" catchtap="edit">编辑</button>
 	</view>	
 </view>

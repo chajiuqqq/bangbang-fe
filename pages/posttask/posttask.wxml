@@ -1,52 +1,47 @@
 <view class="kuang">
-<!-- 	<view class="leftcontent" style="padding-top:15rpx">{{text1}}</view>
-	<input type="text" placeholder="请输入您的姓名"/>
-	<view class="leftcontent">{{text2}}</view>
-	<input type="text" placeholder="请输入您的联系电话"/>
-	<view class="leftcontent">{{text3}}</view>
-	<input type="text" placeholder="请输入您的收货地址"/>
-	<view class="leftcontent">{{text4}}</view>
-	<input type="text" placeholder="请输入您的取件地址"/>
-	<view class="leftcontent">{{text5}}</view>
-	<input type="text" placeholder="请选择您的期望送达时间"/> -->
-	<!-- <view class="topcontent">
-		<text >{{text1}}</text>
-		<input type="text" placeholder="请输入您的姓名"/>
-	</view>
 	<view class="leftcontent">
-		<text >{{text2}}</text>
-		<input type="text" placeholder="请输入您的联系电话"/>
-	</view> -->
-	<view class="leftcontent">
-		<text>{{text3}}</text>
-		<input type="text" placeholder="请输入您的收货地址"/>
+		<view  class="align-center bottom-border">
+			<image src="/photos/shoujian.png" class="icon"></image>
+			<text class="">收货：</text>
+			<view class="address-item" catchtap="chooseAddress">
+				<text class="bold">{{addressee}}</text>
+				<text class="bold"> {{phone}}</text>
+				<text class="address-text">{{address}}</text>
+			</view>
+		</view>
+
+		<view class="align-center">
+			<image src="/photos/position.png" class="icon"></image>
+			<text >取件：</text>
+			<input type="text" placeholder="请输入您的取件地址" bindinput="targetInput"/>
+		</view>
+
 	</view>
-	<view class="leftcontent">
-		<text >{{text4}}</text>
-		<input type="text" placeholder="请输入您的取件地址"/>
+<view class="center">
+			<view style="display:flex;align-items: center;">
+				<text style="margin-right:10px">期望送达时间：</text>
+					<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+						<view class="picker" style="color:#8B8B8B;font-size:34rpx">
+							{{array[index]}}
+						</view>
+					</picker>
+			</view>
+				
+			<view >需求：</view>
+			<view>
+				<textarea class="areas" placeholder='可以在这里写下您的要求噢~' maxlength="{{max}}" bindinput="inputs"> 
+							<text class="currentWordNumber">{{currentWordNumber}}/{{max}}</text>
+					</textarea>
+			</view>
 	</view>
-	<view class="leftcontent">
-		<text >{{text5}}</text>
-		<!-- <input type="text" placeholder="请选择您的期望送达时间"/> -->
-		   <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-		    <view class="picker" style="color:#8B8B8B;font-size:34rpx">
-		      {{array[index]}}
-		    </view>
-		  </picker>
+	<view class="bottom">
+		<text>酬金：</text>
+		<input type="text" value="{{price}}" style="width:95rpx" value="{{amount}}" bindinput="changeprice" />
 	</view>
-	<view class="leftcontent">{{text6}}</view>
-	<view >
-		 <textarea class="areas" placeholder='可以在这里写下您的要求噢~' maxlength="{{max}}" bindinput="inputs"> 
-	        <text class="currentWordNumber">{{currentWordNumber}}/{{max}}</text>
-	    </textarea>
-	</view>
-	<view class="topcontent">
-		<text class="leftcontent" style="display:inline-block">{{text7}}</text>
-		<input type="text" value="{{price}}" style="width:95rpx" data-price="{{price}}" />
-		<button class="bottombutton" size="mini" style="width:35%" bind:tap="changeprice">{{text8}}</button>
-	</view>
+
 	<view>
-		<button class="leftbutton" style="width:65%" >{{text9}}</button>
-		<!-- <button class="rightbutton" style="width:35%" >{{text10}}</button> -->
+		<button class="leftbutton" style="width:65%" bindtap="submit" >提交并支付</button>
 	</view>
+
+
 </view>

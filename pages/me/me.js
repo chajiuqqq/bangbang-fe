@@ -8,11 +8,8 @@ Page({
     text1:"个人信息",
     text2:"帮手认证",
     text3:"常用地址",
-    text4:"修改密码",
-    name:"张三李四"
-  },
-  getname:function(){
-    getApp().globalData.userInfo.nickname;
+    name:"张三李四",
+    avatarUrl:''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -32,7 +29,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      name:getApp().globalData.userInfo.nickname,
+      avatarUrl:getApp().globalData.userInfo.avatarUrl
+    })
   },
 
   /**

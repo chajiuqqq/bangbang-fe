@@ -1,18 +1,25 @@
 .top{
 	width: 750rpx;
-	text-align: center;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.locIcon{
+	width: 20px;
+	height: 20px;
+	margin-left: 30px;
+}
+.loc-text{
+	color: grey;
+	font-size: small;
 }
 .title{
-	background-color: #AAA9A9;
-	color:white;
+	color: orange;
 	border-radius: 10rpx;
-	display: inline-block;
-	width: 100px;
-	height: 30px;
-	padding-top: 7px;
-	margin-bottom: -10rpx;
-/*	float:left;
-	margin-left: 220rpx;*/
+	margin-left: 20px;
+	font-size: larger;
+	font-weight: bold;
+	
 }
 
 

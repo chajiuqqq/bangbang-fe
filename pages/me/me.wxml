@@ -2,10 +2,9 @@
 <!-- 上方 -->
 <view class="red">
 	<view class="imagesize">
-		<image src="{{avatarUrl}}" mode="widthFix" ></image>
+		<image src="{{avatarUrl}}" mode="widthFix" class="head"></image>
 	</view>
-	<view style="margin-top:10rpx;text-align:center;font-size:larger"
-	onshow="name">
+	<view style="margin-top:10rpx;text-align:center;font-size:larger">
 		{{name}}
 	</view>
 	<view class="line"></view>

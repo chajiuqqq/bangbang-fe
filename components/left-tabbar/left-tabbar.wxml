@@ -14,7 +14,7 @@
               <block wx:for="{{item}}" wx:for-item="order">
                   <view class="order-item-container">
                     <order-item class="order-item" orderId="{{order.orderId}}" status="{{order.status}}" content="{{order.content}}" createTime="{{order.createTime}}" 
-                    amount="{{order.amount}}" bindtapButton="bindButtonTap"></order-item>
+                    amount="{{order.amount}}"></order-item>
                   </view>
               </block>
           </scroll-view>

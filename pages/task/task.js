@@ -5,41 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name:'',
-    taskprice:'',
-    text1:"￥",
-    text2:"联系电话：",
-    phonenum:'',
-    text3:"订单编号：",
-    tasknum:'',
-    text4:"下单时间：",
-    tasktime:'',
-    text5:"地址：",
-    address:'',
-    text6:"服务要求：",
-    max: 150, //最多字数 (根据自己需求改变) 
-    currentWordNumber:0,
-    text8:"立即抢单",
     request:''
   },
-
-inputs: function (e) {
-    // 获取输入框的内容
-    var value = e.detail.value;
-    // 获取输入框内容的长度
-    var len = parseInt(value.length);
-    console.log(len)
-
-    this.setData({
-      currentWordNumber: len //当前字数  
-    });
-    //最多字数限制
-    if (len > this.data.max) return;
-    // 当输入框内容的长度大于最大长度限制（max)时，终止setData()的执行
-
-    console.log(this.data)
-  },
-
   GetThisTask:function(e){
 
   },
@@ -49,24 +16,45 @@ inputs: function (e) {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var name= options.name;
-    var task= options.task;
-    var tasknum= options.tasknum;
-    var tasktime= options.tasktime;
-    var taskprice= options.taskprice;
-    var phonenum= options.phonenum;
-    var address= options.address;
-    var request= options.request;
+    //判断是不是从接单界面转过来的
     this.setData({
-      name:name,
-      task:task,
-      tasknum:tasknum,
-      tasktime:tasktime,
-      taskprice:taskprice,
-      phonenum:phonenum,
-      address:address,
-      request:request,
+      takeOrder:options.takeOrder
     })
+
+    var orderId= options.orderId;
+    wx.showLoading({
+      title: '正在加载',
+    })
+    getApp().request({
+      url:`/order/${orderId}`,
+      success:(res)=>{
+        if(res.statusCode == 200){
+          console.log('获取订单成功...')
+          this.setData({
+            currentOrder:res.data
+          })
+        }else{
+          console.log('获取订单失败...')
+          wx.showToast({
+            title: '获取失败',
+            icon:'none'
+          })
+        }
+      },
+      fail:(err)=>{
+        console.log('获取订单失败...')
+        wx.showToast({
+          title: '获取失败',
+          icon:'none'
+        })
+      },
+      complete:()=>{
+        wx.hideLoading({
+          complete: (res) => {},
+        })
+      }
+    })
+
   },
 
   /**

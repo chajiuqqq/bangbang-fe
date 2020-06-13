@@ -6,22 +6,22 @@
 
   <view class='name'>
     <text>昵称</text>
-    <input name="nickename" type='text' placeholder-style='font-size:28rpx;' onshow="getname"></input>
+    <input data-name="nickname" type='text' placeholder-style='font-size:28rpx;' bindinput="bindinput" value="{{nickname}}"></input>
   </view>
  
 
 <view class='school'>
     <text>学校</text>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <picker bindchange="bindPickerChange" value="{{schoolIndex}}" range="{{schoolList}}" range-key="name">
         <view class="picker" style="color:#8B8B8B;font-size:34rpx">
-          {{array[index]}}
+          {{schoolList[schoolIndex].name}}
         </view>
       </picker>
 </view>
 
  <view class='ads'>
  <text>手机号</text>
- <input name="phone" type='text' placeholder-style='font-size:28rpx;' placeholder='请输入您的手机号'></input>
+ <input data-name="phone" type='text' placeholder-style='font-size:28rpx;' placeholder='请输入您的手机号' bindinput="bindinput" value="{{phone}}"></input>
  </view>
 
   <button form-type='submit' type='primary'>提交</button>
@@ -29,7 +29,7 @@
 
 <!-- 模态框 -->
 <modal class="modal" title='要提交的信息' hidden="{{modalHidden}}" bindcancel='modalCancel' bindconfirm='modalConfirm'>
-    <view>昵称:{{information.nickename}}</view>
-    <view>学校：{{information.schoolName}}</view>
-    <view>手机号：{{information.phone}}</view>
+    <view>昵称:{{nickname}}</view>
+    <view>学校：{{schoolList[schoolIndex].name}}</view>
+    <view>手机号：{{phone}}</view>
 </modal>

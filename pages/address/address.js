@@ -5,56 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    "addresses": [
-      {
-        "address": "四教310",
-        "addressee": "蔡芳",
-        "phone": "13311111111",
-        "id": 123
-      },
-      {
-        "address": "四教310",
-        "addressee": "郝磊",
-        "phone": "13311111111",
-        "id": 124
-      },
-      {
-        "address": "四教310",
-        "addressee": "郝芳",
-        "phone": "13311111111",
-        "id": 125
-      },
-      {
-        "address": "四教310",
-        "addressee": "邓娜",
-        "phone": "13311111111",
-        "id": 126
-      },
-      {
-        "address": "四教310",
-        "addressee": "熊军",
-        "phone": "13311111111",
-        "id": 127
-      },
-      {
-        "address": "四教310",
-        "addressee": "顾刚",
-        "phone": "13311111111",
-        "id": 128
-      },
-      {
-        "address": "四教310",
-        "addressee": "万平",
-        "phone": "13311111111",
-        "id": 129
-      },
-      {
-        "address": "四教310",
-        "addressee": "戴超",
-        "phone": "13311111111",
-        "id": 130
-      }
-    ],
+    "addresses": [],
     text1:"编辑",
     text2:"添加新地址"
   },
@@ -63,12 +14,22 @@ Page({
       url: '/pages/addressDetail/addressDetail'
     })
   },
+  bindChoose:function(e){
+    if(this.data.choose){
+      getApp().globalData.selectedAddress = e.currentTarget.dataset.item
+      wx.navigateBack({
+        complete: (res) => {},
+      })
+    }
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      choose:options.choose
+    })
   },
 
   /**
@@ -82,7 +43,36 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.showLoading({
+      title: '正在获取',
+    })
+    getApp().request({
+      url:'/addresses',
+      success:(res)=>{
+        if(res.statusCode == 200){
+          console.log("获取地址列表成功...",res.statusCode)
+          this.setData({
+            addresses : res.data
+          })
+        }else{
+          console.log("获取地址列表失败...",res.statusCode)
+        }
+      },
+      fail:(err)=>{
+        console.log("获取地址列表失败...",err)
+      },
+      complete:()=>{
+        wx.hideLoading({
+          complete: (res) => {},
+        })
+      }
+    })
+  },
+  edit:function(e){
+    let address = e.currentTarget.dataset.address
+    wx.navigateTo({
+      url: '/pages/addressDetail/addressDetail?addressee=' + address.addressee + '&address=' + address.address + '&phone=' + address.phone + '&id=' + address.id
+    })
   },
 
   /**

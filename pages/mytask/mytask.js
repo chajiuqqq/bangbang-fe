@@ -15,185 +15,61 @@ Page({
       {'text':'已完成'}
     ],
     bookOrderList:[
-      [
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        }
-      ],
-      [
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        }
-      ]
     ],
     takedOrderList:[
-      [
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        }
-      ],
-      [
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        },
-        {
-          orderId:'12',
-          status:1,
-          content:'dddd',
-          createTime:'2020',
-          amount:'12'
-        }
-      ]
     ]
+  },
+  onShow:function(){
+    wx.showLoading({
+      title: '正在加载',
+    })
+    let that = this
+    getApp().request({
+      url:'/orders',
+      data:{
+        identity:0
+      },
+      success:(res)=>{
+        if(res.statusCode == 200){
+          that.prepareData(res.data)
+        }
+      }
+    })
+  },
+
+  prepareData:function(data){
+    let all=[]
+    let notPaied=[]
+    let waitingForTake=[]
+    let doing=[]
+    let completed=[]
+
+    for(let i=0,len=data.length;i<len;i++){
+      all.push(data[i])
+
+      if(data[i].payStatus == 0){
+        notPaied.push(data[i])
+      }
+      if(data[i].status == 3){
+        waitingForTake.push(data[i])
+      }
+      if(data[i].status == 0){
+        doing.push(data[i])
+      }
+      if(data[i].status == 1){
+        completed.push(data[i])
+      }
+    }
+    
+    this.data.bookOrderList = []  //先清空原来的数组，不然新的都到后面去了，格式错误无法显示...
+    this.data.bookOrderList.push(all,notPaied,waitingForTake,doing,completed)
+    this.setData({
+      bookOrderList:this.data.bookOrderList
+    })
+    wx.hideLoading({
+      complete: (res) => {},
+    })
+
   },
   bindBarTap:function(e){
     this.setData({

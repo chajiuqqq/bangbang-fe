@@ -70,3 +70,8 @@
   	display: inline-flex;
   	margin-top:20rpx;
   }
+
+  .head{
+    
+    border-radius: 50%;
+  }
