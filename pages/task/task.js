@@ -8,7 +8,10 @@ Page({
     request:''
   },
   GetThisTask:function(e){
-
+    wx.showToast({
+      title: '正在研发中,敬请期待',
+      icon:'none'
+    })
   },
 
 

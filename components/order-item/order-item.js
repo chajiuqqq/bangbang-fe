@@ -29,9 +29,17 @@ Component({
   },
   //buttonText无法正常渲染
   attached:function(){
+    this.update()
+  },
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    
+  update:function(status){
     let text=''
     let mybuttonText= ''
-    switch(this.properties.status){
+    switch(status || this.properties.status){
       case 0:
         text = '正在进行';
         mybuttonText = '确认收货';
@@ -51,12 +59,9 @@ Component({
       statusText: text,
       buttonText: mybuttonText
     })
-  },
-  /**
-   * 组件的方法列表
-   */
-  methods: {
+    },
     onTap:function(e){
+      let that = this
       wx.showModal({
         title:'确定操作吗',
         success:(res)=>{
@@ -89,6 +94,7 @@ Component({
                         wx.showToast({
                           title: '操作成功'
                         })
+                        that.update(res.data.status)
                       }else{
                         wx.showToast({
                           title: '操作失败',

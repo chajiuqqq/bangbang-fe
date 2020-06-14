@@ -2,6 +2,10 @@
 var config = require('./config')
 App({
   onLaunch: function () {
+    // 暂时清理一下
+    wx.clearStorage({
+      complete: (res) => {},
+    })
     console.info('loading app...');
     wx.showLoading({
       title: '登录中',
@@ -10,14 +14,14 @@ App({
   },
   
   //检测是否登录
-  checkLogin: function () {
+  checkLogin: function (cb) {
     console.info('check login...');
     var skey = wx.getStorageSync('skey');
     if (skey) {
-      this.getUserInfo();
+      this.getUserInfo(cb);
     }
     else {
-      this.login();
+      this.login(cb);
     }
     
   },
@@ -26,7 +30,7 @@ App({
   //step1，调用wx.login获取code
   //step2，发送code到腾讯云，并且返回第三方skey，存储到本地
   //step3，获取用户信息
-  login: function () {
+  login: function (cb) {
     console.info('login...');
     var that = this;
     wx.login({
@@ -50,7 +54,7 @@ App({
             }
 
             wx.setStorageSync('skey', skey);
-            that.getUserInfo();
+            that.getUserInfo(cb);
           }
         })
       }
@@ -61,21 +65,28 @@ App({
   //对于未登录用户，重新登录
   //对于未注册用户，注册新用户
   //对于已注册用户，全局写入用户信息
-  getUserInfo: function () {
+  getUserInfo: function (cb) {
     var that = this;
     this.request({
       url: '/user',
       success: function (res) {
           //skey超时,重新获取skey
           if(res.statusCode == 401){
+            wx.clearStorage({
+              complete: (res) => {},
+            })
+            console.log("skey已过期...正在重新获取")
             that.login()
           }
           // 未注册用户
           else if (res.statusCode == 400) {
-            that.registerUser();
+            that.registerUser(cb);
           }
           else {
             console.log('已注册，skey未过期:',wx.getStorageSync('skey'))
+            if(cb){
+              cb()
+            }
             that.globalData.userInfo = res.data;
             wx.hideLoading();
           }
@@ -87,7 +98,7 @@ App({
   //注册用户
   //在User表中添加记录
   //授权失败写入默认用户信息，否则写入通过wx.getUserInfo获取的用户信息
-  registerUser: function () {
+  registerUser: function (cb) {
     var that = this;
     wx.getSetting({
       success: (res) => {
@@ -99,9 +110,9 @@ App({
           })
         }else{
         //有授权时
-        console.log('已获得授权，正在注册...')
           wx.getUserInfo({
             success: function (res) {
+              console.log('已获得授权，正在注册...')
               var userInfo = res.userInfo;
               userInfo = {
                 nickname: userInfo.nickName,
@@ -128,6 +139,11 @@ App({
                   wx.hideLoading();
                 }
               });
+            },
+            complete:()=>{
+              if(cb){
+                cb()
+              }
             }
           })
         }

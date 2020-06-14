@@ -29,5 +29,5 @@
 </view>
 <view class="conts">
 </view>
-<button wx:if="{{takeOrder}}" class="bottombutton" style="width:94%" bind:tap="GetThisTask">立刻接单</button>
+<button wx:if="{{takeOrder}}" class="bottombutton" style="width:94%" bindtap="GetThisTask">立刻接单</button>
 
