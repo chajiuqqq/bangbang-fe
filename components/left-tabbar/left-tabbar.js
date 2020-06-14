@@ -27,6 +27,11 @@ Component({
         selectedIndex: e.detail.current
       })
     }
+  },
+  tapButton:function(){
+    let myEventDetail={}
+    let myEventOption={}
+    this.triggerEvent('TapButton',myEventDetail,myEventOption)
   }
 
  }

@@ -161,6 +161,59 @@ App({
     obj.url = obj.url + '?skey=' + skey;
     return wx.request(obj);
   },
+
+  takeOrder:function(order){
+    wx.showModal({
+      title:'确定接单吗',
+      success:(res)=>{
+        if(res.confirm){
+          this.judge(order)
+            .then((res)=>{
+              wx.showToast({
+                title: '接单成功'
+              })
+              wx.navigateTo({
+                url: `/pages/task/task?orderId=${res}`
+              })
+            },(err)=>{
+              wx.showToast({
+                title: err.errmsg,
+                icon:'none'
+              })
+            })
+        }
+      }
+    })
+  },
+  judge:function(obj){
+    return new Promise(function(resolve,reject){
+      let currentOpenid = getApp().globalData.userInfo.openId
+      if(currentOpenid != obj.customerId){
+        getApp().request({
+          url:`/order/${obj.orderId}`,
+          method:'PUT',
+          data:{
+            option:0
+          },
+          success:(res)=>{
+            if(res.statusCode == 200){
+              resolve(obj.orderId)
+            }else if(res.statusCode == 401){
+              reject({errmsg:'请先完善帮手信息'})
+            }else{
+              reject({errmsg:'接单失败'})
+            }
+          },
+          fail:(err)=>{
+            console.log(err)
+            reject({errmsg:'接单失败'})
+          }
+        })
+      }else{
+        reject({errmsg:'不可接自己的单'})
+      }
+    })
+  },
   
   globalData: {
     //默认值
@@ -168,6 +221,8 @@ App({
       nickname: '新手',
       avatarUrl: 'https://yunlaiwu0.cn-bj.ufileos.com/teacher_avatar.png'
     },
-    selectedAddress:{}
+    selectedAddress:{},
+    //我的订单页 我的订单：0 我接的单：1，用于控制每个订单项下button的显示
+    currentMyOrderIndex:0
   }
 })

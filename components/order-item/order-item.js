@@ -30,6 +30,9 @@ Component({
   //buttonText无法正常渲染
   attached:function(){
     this.update()
+    this.setData({
+      showButtonFlag:getApp().globalData.currentMyOrderIndex
+    })
   },
   /**
    * 组件的方法列表
@@ -113,10 +116,9 @@ Component({
         }
       })
 
-
-      // var myEventDetail={}
-      // var myEventOption={}
-      // this.triggerEvent('TapButton',myEventDetail,myEventOption)
+      let myEventDetail={}
+      let myEventOption={}
+      this.triggerEvent('TapButton',myEventDetail,myEventOption)
     },
     turnto:function(){
       wx.navigateTo({

@@ -25,12 +25,7 @@
                 </view>
 
                 <view class="line"></view>
-                <view class="qiangdan" data-name="{{item.name}}" data-tasknum="{{item.tasknum}}"
-                data-task="{{item.task}}" data-tasktime="{{item.tasktime}}" data-taskprice="{{item.taskprice}}"
-                data-phonenum="{{item.phonenum}}"
-                data-address="{{item.address}}"
-                data-request="{{item.request}}" 
-                bindtap="GetThisTask">接单</view>
+                <view class="qiangdan" data-item="{{item}}" bindtap="GetThisTask">接单</view>
                 
               </view>
 

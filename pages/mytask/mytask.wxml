@@ -1,18 +1,18 @@
 <view class="main">
   <view class="tabbar">
-    <view class="bar-item {{selectedIndex == 0 ? 'on' :''}}" bindtap="bindBarTap" data-index="0">我下的单</view>
-    <view class="bar-item {{selectedIndex == 1 ? 'on' :''}}" bindtap="bindBarTap" data-index="1">我接的单</view>
+    <view class="bar-item {{currentIndex == 0 ? 'on' :''}}" bindtap="bindBarTap" data-index="0">我下的单</view>
+    <view class="bar-item {{currentIndex == 1 ? 'on' :''}}" bindtap="bindBarTap" data-index="1">我接的单</view>
   </view>
   <swiper class="swiper-container" current="{{currentIndex}}" bindchange="bindSwiperChange">
     <swiper-item class="swiper-item">
       <!-- 我下的单 -->
-      <left-tabbar  leftItemList="{{book}}" orderList="{{bookOrderList}}"></left-tabbar>
+      <left-tabbar  leftItemList="{{book}}" orderList="{{bookOrderList}}" bindTapButton="tapButton"></left-tabbar>
 
     </swiper-item>
 
     <swiper-item class="swiper-item">
     <!-- 我接的单  -->
-      <left-tabbar  leftItemList="{{take}}" orderList="{{takedOrderList}}"></left-tabbar>
+      <left-tabbar  leftItemList="{{take}}" orderList="{{takedOrderList}}" bindTapButton="tapButton"></left-tabbar>
     </swiper-item>
   </swiper>
 

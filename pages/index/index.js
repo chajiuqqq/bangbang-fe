@@ -60,11 +60,8 @@ Page({
       url: `/pages/task/task?orderId=${orderId}&takeOrder=true`
     })
   },
-  GetThisTask:function(e){
-      wx.showToast({
-        title: '正在研发中,敬请期待',
-        icon:'none'
-      })
+  GetThisTask:function(e){ 
+   getApp().takeOrder(e.currentTarget.dataset.item)
   },
   bindViewTap: function() {
   

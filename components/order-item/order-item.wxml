@@ -8,7 +8,7 @@
       <text>任务：{{content}}</text>
       <text>下单时间：{{createTime}}</text>
       <text class="order-pay">金额：{{amount}}</text>
-      <button size="mini" type="primary" class="myButton" catchtap="onTap">{{buttonText}}</button>
+      <button size="mini" type="primary" class="myButton" catchtap="onTap" wx:if="{{showButtonFlag == 0}}">{{buttonText}}</button>
   </view>
 
   

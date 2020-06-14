@@ -19,7 +19,6 @@ input{
 }
 .areas{
   height:280rpx;
-  width:92%;
   font-size: 30rpx;
   text-indent: 28rpx;
   border: 1rpx solid #F6F6F6;

@@ -17,11 +17,15 @@
 <view class="line"></view>
 <view class="task">
 	<text>下单时间：</text>
-	<text>{{currentOrder.createTime}}</text>
+	<text style="font-size: small;">{{currentOrder.createTime}}</text>
 </view>
 <view class="task">
 	<text style="letter-spacing:18rpx">地址：</text>
 	<text>{{currentOrder.address}}</text>
+</view>
+<view class="task">
+	<text style="letter-spacing:18rpx">期望送达时间：</text>
+	<text>{{currentOrder.arrivalTime}}</text>
 </view>
 <view class="task">
 	<text>订单要求：</text>
